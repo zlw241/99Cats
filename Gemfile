@@ -18,4 +18,5 @@ group :development do
   gem 'spring'
   gem 'pry-rails'
   gem 'annotate'
+  gem 'seed_dump'
 end
