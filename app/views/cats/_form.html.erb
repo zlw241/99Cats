@@ -3,7 +3,7 @@
 
 <form enctype="multipart/form-data" action="<%= action %>" method="post">
 
-  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <%= auth_token %>
 
   <input type="hidden" name="_method" value="<%= method %>">
 

@@ -22,11 +22,11 @@ users = User.create!([
 
 
 cats = Cat.create!([
-  { name: 'Hans', birth_date: '1994-10-01', color: 'black', user_id: 1, description: "I'm an ugly cat", sex: 'M'},
+  { name: 'Hans', birth_date: '1994-10-01', color: 'black', user_id: 1, description: "I'm an ugly cat", sex: 'M', image: 'kitty1.jpg'},
   { name: 'Frans', birth_date: '1994-09-02', color: 'white', user_id: 2, description: "I'm a pretty cat", sex: 'M'},
   { name: 'Bronse', birth_date: '1994-08-03', color: 'orange', user_id: 3, description: "I'm a mean cat", sex: 'M'},
   { name: 'Mans', birth_date: '1994-07-04', color: 'brown', user_id: 1, description: "I'm a cute cat", sex: 'M'},
-  { name: 'Jerry', birth_date: '1994-06-05', color 'black', user_id: 2, description: "I'm a gentle cat", sex: 'M'},
+  { name: 'Jerry', birth_date: '1994-06-05', color: 'black', user_id: 2, description: "I'm a gentle cat", sex: 'M'},
   { name: 'Nala', birth_date: '1994-05-06', color: 'white', user_id: 3, description: "I'm a wild cat", sex: 'F'},
   { name: 'Simba', birth_date: '1994-04-07', color: 'orange', user_id: 1, description: "I'm a tom cat", sex: 'M'},
   { name: 'Kitty', birth_date: '1994-03-08', color: 'brown', user_id: 2, description: "I'm a stupid cat", sex: 'F'},

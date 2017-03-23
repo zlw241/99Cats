@@ -6,11 +6,11 @@
       <% if req.pending? %>
           <!-- <%= button_to "Approve", approve_cat_rental_request_url(req) %> -->
           <form action="<%=approve_cat_rental_request_url(req)%>" method="post">
-            <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+            <%= auth_token %>
             <input type="submit" name="" value="Approve">
           </form>
           <form action="<%=deny_cat_rental_request_url(req)%>" method="post">
-            <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+            <%= auth_token %>
             <input type="submit" name="" value="Deny">
           </form>
           <!-- <%= button_to "Deny", deny_cat_rental_request_url(req) %> -->

@@ -26783,3 +26783,1135 @@ Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 09:21:00 -0400
 
 
 Started GET "/assets/favicon.ico" for ::1 at 2017-03-23 09:21:00 -0400
+  [1m[36mSQL (14.5ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (76.9ms)[0m  DROP TABLE "cat_rental_requests" CASCADE
+  [1m[36m (19.0ms)[0m  [1mCREATE TABLE "cat_rental_requests" ("id" serial primary key, "cat_id" integer NOT NULL, "end_date" date NOT NULL, "start_date" date NOT NULL, "status" character varying NOT NULL, "created_at" timestamp, "updated_at" timestamp, "user_id" integer NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX  "index_cat_rental_requests_on_cat_id" ON "cat_rental_requests" USING btree ("cat_id")
+  [1m[36m (1.3ms)[0m  [1mCREATE  INDEX  "index_cat_rental_requests_on_user_id" ON "cat_rental_requests" USING btree ("user_id")[0m
+  [1m[35m (2.9ms)[0m  DROP TABLE "cats" CASCADE
+  [1m[36m (5.3ms)[0m  [1mCREATE TABLE "cats" ("id" serial primary key, "birth_date" date NOT NULL, "color" character varying NOT NULL, "name" character varying NOT NULL, "sex" character varying(1) NOT NULL, "description" text, "created_at" timestamp, "updated_at" timestamp, "user_id" integer NOT NULL, "image_file_name" character varying, "image_content_type" character varying, "image_file_size" integer, "image_updated_at" timestamp) [0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX  "index_cats_on_user_id" ON "cats" USING btree ("user_id")
+  [1m[36m (2.8ms)[0m  [1mDROP TABLE "users" CASCADE[0m
+  [1m[35m (5.9ms)[0m  CREATE TABLE "users" ("id" serial primary key, "user_name" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170323014823')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170322175016')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170322200824')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170322201436')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170322211226')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170322211330')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.6ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (4.6ms)[0m  DROP TABLE "cat_rental_requests" CASCADE
+  [1m[36m (8.4ms)[0m  [1mCREATE TABLE "cat_rental_requests" ("id" serial primary key, "cat_id" integer NOT NULL, "end_date" date NOT NULL, "start_date" date NOT NULL, "status" character varying NOT NULL, "created_at" timestamp, "updated_at" timestamp, "user_id" integer NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE  INDEX  "index_cat_rental_requests_on_cat_id" ON "cat_rental_requests" USING btree ("cat_id")
+  [1m[36m (1.3ms)[0m  [1mCREATE  INDEX  "index_cat_rental_requests_on_user_id" ON "cat_rental_requests" USING btree ("user_id")[0m
+  [1m[35m (4.1ms)[0m  DROP TABLE "cats" CASCADE
+  [1m[36m (6.2ms)[0m  [1mCREATE TABLE "cats" ("id" serial primary key, "birth_date" date NOT NULL, "color" character varying NOT NULL, "name" character varying NOT NULL, "sex" character varying(1) NOT NULL, "description" text, "created_at" timestamp, "updated_at" timestamp, "user_id" integer NOT NULL, "image_file_name" character varying, "image_content_type" character varying, "image_file_size" integer, "image_updated_at" timestamp) [0m
+  [1m[35m (3.0ms)[0m  CREATE  INDEX  "index_cats_on_user_id" ON "cats" USING btree ("user_id")
+  [1m[36m (4.2ms)[0m  [1mDROP TABLE "users" CASCADE[0m
+  [1m[35m (8.6ms)[0m  CREATE TABLE "users" ("id" serial primary key, "user_name" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (21.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'zach' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'AyIv5_CDpVquMle9OKpNvA' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"  [["user_name", "zach"], ["password_digest", "$2a$10$QJbZdvOSSnmYXkhnhTaooOX30s3iogkzxlXUpQ4VqURvyrkYDSUTC"], ["session_token", "AyIv5_CDpVquMle9OKpNvA"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'john' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'gpjAOW0Yk9ej4nInVUGKDw' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_name", "john"], ["password_digest", "$2a$10$XDMihty4GxB.NtdzHHYHMeBnjT6OHLPEzDpY9UdeYiX4hBfzQhNlm"], ["session_token", "gpjAOW0Yk9ej4nInVUGKDw"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'rob' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'iCmBr-xOY2QDFODUdX7BjQ' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"  [["user_name", "rob"], ["password_digest", "$2a$10$Dv/gpUxBfyDFdrYQ4m2Ngej0K.ugIgMS/FQgjr6ENx7ZI.ipCpFbm"], ["session_token", "iCmBr-xOY2QDFODUdX7BjQ"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'allie' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'reUKV3WCKT41ma2ZNM-O6g' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_name", "allie"], ["password_digest", "$2a$10$819vLayqB6b/YmtZkz/4IuRsUMXoZl/geIf7LdFokO1Mfd0WWu2H6"], ["session_token", "reUKV3WCKT41ma2ZNM-O6g"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'bre' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'L4HnH1JovYFQ-OZsIDxU4g' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"  [["user_name", "bre"], ["password_digest", "$2a$10$DbGIsSXiDDnXCVRA6AjFvu7giZ3RrD.ltcHlBuUXcYGvfKQY1zSm."], ["session_token", "L4HnH1JovYFQ-OZsIDxU4g"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'charlie' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'hUAhWUBPGRZ6jh7ox1897g' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_name", "charlie"], ["password_digest", "$2a$10$FTd/ZmIRId9wADhwEnK54OaG8u0P/ZzTZI.2e1FTsDTgBdgvSbmXe"], ["session_token", "hUAhWUBPGRZ6jh7ox1897g"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'glenn' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '66-0yvwCkIx_tnNvITALjw' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"  [["user_name", "glenn"], ["password_digest", "$2a$10$8N5fgI26tJ7DwHQsTMUAaurKBN8tRnCKDFOMuJaCaCWwQ516jxVwK"], ["session_token", "66-0yvwCkIx_tnNvITALjw"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'mary' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'eewa5iXcevM2ryIjWUQUlw' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_name", "mary"], ["password_digest", "$2a$10$/a4VduIpiRN5GL88kjiz2OXF9N/FxTzQIsmTr9UHfHAwBHIaISy3O"], ["session_token", "eewa5iXcevM2ryIjWUQUlw"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'chris' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '_qrhJy8MX0sOlok9mA6Qig' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"  [["user_name", "chris"], ["password_digest", "$2a$10$DjKIxbhD94i536EP18kNNeyzffoMS03WDu.QMSFQMfSx1AS3G5gke"], ["session_token", "_qrhJy8MX0sOlok9mA6Qig"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'adam' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'eZ3sPTCbMFwrd6MzuU_ETA' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_name", "adam"], ["password_digest", "$2a$10$QSdFq0ohGMKAjkA3ujQDXOu/arCOIV9BCjILi7cSTCCOAa28AyjUO"], ["session_token", "eZ3sPTCbMFwrd6MzuU_ETA"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'sarah' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'rOqjm1-IWsuuLE1m_7CmOA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"  [["user_name", "sarah"], ["password_digest", "$2a$10$aW6GafMPyagFwuQyS8tC0etm0fqIa755lai/MSvtLLV8ORjCOdbIe"], ["session_token", "rOqjm1-IWsuuLE1m_7CmOA"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Cat> at /Users/appacademy/Desktop/99Cats/app/models/cat.rb:23)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "cats" ("name", "birth_date", "color", "user_id", "description", "sex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Hans"], ["birth_date", "1994-10-01"], ["color", "black"], ["user_id", 1], ["description", "I'm an ugly cat"], ["sex", "M"], ["created_at", "2017-03-23 13:47:41.839689"], ["updated_at", "2017-03-23 13:47:41.839689"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "cats" ("name", "birth_date", "color", "user_id", "description", "sex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Frans"], ["birth_date", "1994-09-02"], ["color", "white"], ["user_id", 2], ["description", "I'm a pretty cat"], ["sex", "M"], ["created_at", "2017-03-23 13:47:41.859262"], ["updated_at", "2017-03-23 13:47:41.859262"]]
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "cats" ("name", "birth_date", "color", "user_id", "description", "sex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Bronse"], ["birth_date", "1994-08-03"], ["color", "orange"], ["user_id", 3], ["description", "I'm a mean cat"], ["sex", "M"], ["created_at", "2017-03-23 13:47:41.864108"], ["updated_at", "2017-03-23 13:47:41.864108"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "cats" ("name", "birth_date", "color", "user_id", "description", "sex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Mans"], ["birth_date", "1994-07-04"], ["color", "brown"], ["user_id", 1], ["description", "I'm a cute cat"], ["sex", "M"], ["created_at", "2017-03-23 13:47:41.868138"], ["updated_at", "2017-03-23 13:47:41.868138"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "cats" ("name", "birth_date", "color", "user_id", "description", "sex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Jerry"], ["birth_date", "1994-06-05"], ["color", "black"], ["user_id", 2], ["description", "I'm a gentle cat"], ["sex", "M"], ["created_at", "2017-03-23 13:47:41.872056"], ["updated_at", "2017-03-23 13:47:41.872056"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "cats" ("name", "birth_date", "color", "user_id", "description", "sex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Nala"], ["birth_date", "1994-05-06"], ["color", "white"], ["user_id", 3], ["description", "I'm a wild cat"], ["sex", "F"], ["created_at", "2017-03-23 13:47:41.875486"], ["updated_at", "2017-03-23 13:47:41.875486"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "cats" ("name", "birth_date", "color", "user_id", "description", "sex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Simba"], ["birth_date", "1994-04-07"], ["color", "orange"], ["user_id", 1], ["description", "I'm a tom cat"], ["sex", "M"], ["created_at", "2017-03-23 13:47:41.879492"], ["updated_at", "2017-03-23 13:47:41.879492"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "cats" ("name", "birth_date", "color", "user_id", "description", "sex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Kitty"], ["birth_date", "1994-03-08"], ["color", "brown"], ["user_id", 2], ["description", "I'm a stupid cat"], ["sex", "F"], ["created_at", "2017-03-23 13:47:41.882576"], ["updated_at", "2017-03-23 13:47:41.882576"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "cats" ("name", "birth_date", "color", "user_id", "description", "sex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Petri"], ["birth_date", "1994-02-09"], ["color", "black"], ["user_id", 1], ["description", "I'm a fat cat"], ["sex", "M"], ["created_at", "2017-03-23 13:47:41.885838"], ["updated_at", "2017-03-23 13:47:41.885838"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "cats" ("name", "birth_date", "color", "user_id", "description", "sex", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "Diva"], ["birth_date", "1994-01-10"], ["color", "white"], ["user_id", 1], ["description", "can I haz cheezburger??"], ["sex", "F"], ["created_at", "2017-03-23 13:47:41.888998"], ["updated_at", "2017-03-23 13:47:41.888998"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/cats" for ::1 at 2017-03-23 09:47:56 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CatsController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :logged_in_redirect rendered or redirected
+Completed 302 Found in 49ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/session/new" for ::1 at 2017-03-23 09:47:56 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (13.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 168ms (Views: 165.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 09:47:56 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 09:47:56 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 09:47:56 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 09:47:56 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 09:47:56 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 09:47:56 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 09:47:56 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 09:47:56 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 09:47:56 -0400
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2017-03-23 09:47:57 -0400
+
+
+Started POST "/session" for ::1 at 2017-03-23 09:48:18 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"4Oouwihd70lI8yZimcYgQdWA4YURVLVdGgEYPCVjY0+gJt6pslTtiNcSEHR3mlb/ny5VNdiD89A56YQOPhocwA==", "user"=>{"user_name"=>"zach", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1  [["user_name", "zach"]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."user_name" = 'zach' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'viAtK7MZgZsxycSbM2ASlA' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "viAtK7MZgZsxycSbM2ASlA"], ["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 138ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/cats" for ::1 at 2017-03-23 09:48:18 -0400
+Processing by CatsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "viAtK7MZgZsxycSbM2ASlA"]]
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Cat> at /Users/appacademy/Desktop/99Cats/app/models/cat.rb:23)
+  [1m[36mCat Load (0.9ms)[0m  [1mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 103ms (Views: 88.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 09:48:18 -0400
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 09:48:18 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 09:48:18 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 09:48:18 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 09:48:18 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 09:48:18 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 09:48:18 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 09:48:18 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 09:48:18 -0400
+
+
+Started GET "/images/original/missing.png" for ::1 at 2017-03-23 09:48:18 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.8) lib/rails/engine.rb:518:in `call'
+  railties (4.2.8) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (39.0ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (153.9ms)
+
+
+Started GET "/cats/6" for ::1 at 2017-03-23 09:48:24 -0400
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "viAtK7MZgZsxycSbM2ASlA"]]
+  [1m[36mCat Load (0.5ms)[0m  [1mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCatRentalRequest Load (1.0ms)[0m  [1mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1  ORDER BY start_date[0m  [["cat_id", 6]]
+  Rendered cats/show.html.erb within layouts/application (124.6ms)
+Completed 200 OK in 175ms (Views: 168.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/images/original/missing.png" for ::1 at 2017-03-23 09:48:24 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.8) lib/rails/engine.rb:518:in `call'
+  railties (4.2.8) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (111.0ms)
+
+
+Started GET "/images/original/missing.png" for ::1 at 2017-03-23 09:48:26 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.8) lib/rails/engine.rb:518:in `call'
+  railties (4.2.8) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (107.5ms)
+
+
+Started GET "/cats" for ::1 at 2017-03-23 09:50:25 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CatsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "viAtK7MZgZsxycSbM2ASlA"]]
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Cat> at /Users/appacademy/Desktop/99Cats/app/models/cat.rb:23)
+  [1m[36mCat Load (1.4ms)[0m  [1mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 175ms (Views: 129.8ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 09:50:25 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 09:50:25 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 09:50:25 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 09:50:25 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 09:50:25 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 09:50:26 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 09:50:26 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 09:50:26 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 09:50:26 -0400
+
+
+Started GET "/images/original/missing.png" for ::1 at 2017-03-23 09:50:26 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.8) lib/rails/engine.rb:518:in `call'
+  railties (4.2.8) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.0ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (129.3ms)
+
+
+Started GET "/cats/1" for ::1 at 2017-03-23 09:50:30 -0400
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "viAtK7MZgZsxycSbM2ASlA"]]
+  [1m[36mCat Load (0.7ms)[0m  [1mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCatRentalRequest Load (0.7ms)[0m  [1mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1  ORDER BY start_date[0m  [["cat_id", 1]]
+  Rendered cats/show.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 83ms (Views: 76.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/images/original/missing.png" for ::1 at 2017-03-23 09:50:30 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.8) lib/rails/engine.rb:518:in `call'
+  railties (4.2.8) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (107.7ms)
+
+
+Started GET "/images/original/missing.png" for ::1 at 2017-03-23 09:50:33 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  actionpack (4.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.8) lib/rails/engine.rb:518:in `call'
+  railties (4.2.8) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/var/rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (107.0ms)
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (7.5ms)[0m  CREATE TABLE "cat_rental_requests" ("id" serial primary key, "cat_id" integer NOT NULL, "end_date" date NOT NULL, "start_date" date NOT NULL, "status" character varying NOT NULL, "created_at" timestamp, "updated_at" timestamp, "user_id" integer NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mCREATE  INDEX  "index_cat_rental_requests_on_cat_id" ON "cat_rental_requests" USING btree ("cat_id")[0m
+  [1m[35m (1.3ms)[0m  CREATE  INDEX  "index_cat_rental_requests_on_user_id" ON "cat_rental_requests" USING btree ("user_id")
+  [1m[36m (5.7ms)[0m  [1mCREATE TABLE "cats" ("id" serial primary key, "birth_date" date NOT NULL, "color" character varying NOT NULL, "name" character varying NOT NULL, "sex" character varying(1) NOT NULL, "description" text, "created_at" timestamp, "updated_at" timestamp, "user_id" integer NOT NULL, "image_file_name" character varying, "image_content_type" character varying, "image_file_size" integer, "image_updated_at" timestamp) [0m
+  [1m[35m (1.3ms)[0m  CREATE  INDEX  "index_cats_on_user_id" ON "cats" USING btree ("user_id")
+  [1m[36m (5.2ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "user_name" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL) [0m
+  [1m[35m (2.4ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (3.1ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.7ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170323014823')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141030170121')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141030172156')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170322175016')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170322200824')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170322201436')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170322211226')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170322211330')
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (1.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'zach' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '8NBdqvkM8ojrUT7KdrKkRA' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_name", "zach"], ["password_digest", "$2a$10$o.X0G/12wuIm/nROqNKteu.Ker.udrWxcYZPT1jPCHFmdqUirpTgu"], ["session_token", "8NBdqvkM8ojrUT7KdrKkRA"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'john' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'HrC3ikaYyA6mdx4kch2scA' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"  [["user_name", "john"], ["password_digest", "$2a$10$E5SqFSz0Smaqj8eo1qVND.wl25MuJkxkapLp7KyFTnTxkPwxcqJSC"], ["session_token", "HrC3ikaYyA6mdx4kch2scA"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'rob' LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'yTGQfeouZqYoH4ulhOYB-w' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_name", "rob"], ["password_digest", "$2a$10$XWRkF4CErHATCqTOa8VGFOJ2kkC3aw8AhwdlPaR8lAaGyweQts7hm"], ["session_token", "yTGQfeouZqYoH4ulhOYB-w"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'allie' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'vWyDNIST7HMNrHziwciLhQ' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"  [["user_name", "allie"], ["password_digest", "$2a$10$mx2jN0oX9itjCTOFW/mWY.lEkBvDHwYyjhz/5lTPi32wNAMJYmixO"], ["session_token", "vWyDNIST7HMNrHziwciLhQ"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'bre' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'mNgplp-fan6GFDb9BjOvpg' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_name", "bre"], ["password_digest", "$2a$10$j2FMrkLp9sXy8eq8zTm19u55hzb7y7FW.YVRYsXJm1xNCCrhXi.qS"], ["session_token", "mNgplp-fan6GFDb9BjOvpg"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'charlie' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'JT_9CaFnNjnQAWxEdYcASw' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"  [["user_name", "charlie"], ["password_digest", "$2a$10$r4EvLSxPEm7.mhtspEgFu.PPpCsxgxCuiY5ey6PZhW5ylbcfex43y"], ["session_token", "JT_9CaFnNjnQAWxEdYcASw"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'glenn' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = '6mV73_zoeHJxj0-GZ-srRA' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_name", "glenn"], ["password_digest", "$2a$10$TFNR2fomGzdi.NoOxIZ8wuEep1ERdgXzVTorxwqD9URAwoVTeUEqm"], ["session_token", "6mV73_zoeHJxj0-GZ-srRA"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'mary' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'mQJKTDMFlknOq26vmKUDGQ' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"  [["user_name", "mary"], ["password_digest", "$2a$10$WKyhUOKS6bRnNhWFADvGouuXqK05wL9FB27PdyMoqAKEFj95gvS7i"], ["session_token", "mQJKTDMFlknOq26vmKUDGQ"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'chris' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'XhIjXZYsUkmNxRDMFLwXqw' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_name", "chris"], ["password_digest", "$2a$10$j5oeGi4PXSX0MMX8hKNSD.Ip7vLrSFHA9NE34BeAgXlbwaxbWz/iq"], ["session_token", "XhIjXZYsUkmNxRDMFLwXqw"]]
+  [1m[35m (174.5ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'adam' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = '7kSY4hxhVrwHU6JBYXWPzg' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"  [["user_name", "adam"], ["password_digest", "$2a$10$oAk8jCV20.l4kiHAEihQ6ewX8cAYMNTWD/nGXZEj5KuiyEz3hrtgq"], ["session_token", "7kSY4hxhVrwHU6JBYXWPzg"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."user_name" = 'sarah' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."session_token" = 'lUQt52luFqZ41qDpAJpbog' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("user_name", "password_digest", "session_token") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_name", "sarah"], ["password_digest", "$2a$10$t/Xi7L2TYcQRfFW85KV82eIbnUpeIgYNmbUP8XjVaNYMp.QJUNxLC"], ["session_token", "lUQt52luFqZ41qDpAJpbog"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Cat> at /Users/appacademy/Desktop/99Cats/app/models/cat.rb:23)
+
+
+Started GET "/cats" for ::1 at 2017-03-23 09:53:49 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CatsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "viAtK7MZgZsxycSbM2ASlA"]]
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :logged_in_redirect rendered or redirected
+Completed 302 Found in 31ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/session/new" for ::1 at 2017-03-23 09:53:49 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "viAtK7MZgZsxycSbM2ASlA"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "viAtK7MZgZsxycSbM2ASlA"]]
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "viAtK7MZgZsxycSbM2ASlA"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "viAtK7MZgZsxycSbM2ASlA"]]
+Completed 200 OK in 115ms (Views: 112.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 09:53:49 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 09:53:49 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 09:53:49 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 09:53:49 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 09:53:49 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 09:53:49 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 09:53:49 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 09:53:49 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 09:53:49 -0400
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2017-03-23 09:53:49 -0400
+
+
+Started POST "/session" for ::1 at 2017-03-23 09:53:55 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"WbvdpkrLWDiqoguKabRr+4qwit256+WSdcd4NQOwqIIZdy3N0MJa+TVDPZyH6B1FwB4+bXA8ox9WL+QHGMnXDQ==", "user"=>{"user_name"=>"zach", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "viAtK7MZgZsxycSbM2ASlA"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1  [["user_name", "zach"]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."user_name" = 'zach' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'ZqG3bwpZqjdtKkUdMwI4UQ' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "ZqG3bwpZqjdtKkUdMwI4UQ"], ["id", 1]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 107ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/cats" for ::1 at 2017-03-23 09:53:55 -0400
+Processing by CatsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "ZqG3bwpZqjdtKkUdMwI4UQ"]]
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Cat> at /Users/appacademy/Desktop/99Cats/app/models/cat.rb:23)
+  [1m[36mCat Load (0.9ms)[0m  [1mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 91ms (Views: 78.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 09:53:55 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 09:53:55 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 09:53:55 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 09:53:55 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 09:53:55 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 09:53:55 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 09:53:55 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 09:53:55 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 09:53:55 -0400
+
+
+Started GET "/cats" for ::1 at 2017-03-23 09:53:58 -0400
+Processing by CatsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "ZqG3bwpZqjdtKkUdMwI4UQ"]]
+  [1m[36mCat Load (0.6ms)[0m  [1mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 64ms (Views: 61.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cats" for ::1 at 2017-03-23 09:53:59 -0400
+Processing by CatsController#index as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "ZqG3bwpZqjdtKkUdMwI4UQ"]]
+  [1m[36mCat Load (0.5ms)[0m  [1mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 60ms (Views: 56.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/cats" for ::1 at 2017-03-23 09:59:16 -0400
+Processing by CatsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "ZqG3bwpZqjdtKkUdMwI4UQ"]]
+  [1m[36mCat Load (0.7ms)[0m  [1mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 63ms (Views: 60.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cats" for ::1 at 2017-03-23 09:59:17 -0400
+Processing by CatsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "ZqG3bwpZqjdtKkUdMwI4UQ"]]
+  [1m[36mCat Load (0.5ms)[0m  [1mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 61ms (Views: 58.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1" for ::1 at 2017-03-23 09:59:19 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "ZqG3bwpZqjdtKkUdMwI4UQ"]]
+  [1m[36mCat Load (0.4ms)[0m  [1mSELECT "cats".* FROM "cats" WHERE "cats"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mCatRentalRequest Load (0.7ms)[0m  SELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."user_id" = $1  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 81ms (Views: 77.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/cat_rental_requests/new" for ::1 at 2017-03-23 09:59:22 -0400
+Processing by CatRentalRequestsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "ZqG3bwpZqjdtKkUdMwI4UQ"]]
+  Rendered shared/_errors.html.erb (0.4ms)
+  [1m[35mCat Load (0.5ms)[0m  SELECT "cats".* FROM "cats"
+  Rendered cat_rental_requests/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 79ms (Views: 70.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/cats/new" for ::1 at 2017-03-23 09:59:24 -0400
+Processing by CatsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "ZqG3bwpZqjdtKkUdMwI4UQ"]]
+  Rendered shared/_errors.html.erb (0.1ms)
+  Rendered cats/_form.html.erb (1.0ms)
+  Rendered cats/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 51ms (Views: 42.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/cats" for ::1 at 2017-03-23 09:59:25 -0400
+Processing by CatsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "ZqG3bwpZqjdtKkUdMwI4UQ"]]
+  [1m[36mCat Load (0.8ms)[0m  [1mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 53ms (Views: 50.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/cats" for ::1 at 2017-03-23 10:20:35 -0400
+Processing by CatsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "ZqG3bwpZqjdtKkUdMwI4UQ"]]
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Cat> at /Users/appacademy/Desktop/99Cats/app/models/cat.rb:23)
+  [1m[36mCat Load (0.5ms)[0m  [1mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 75ms (Views: 57.1ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 10:20:35 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 10:20:35 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 10:20:35 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 10:20:35 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 10:20:35 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 10:20:35 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 10:20:35 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 10:20:35 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 10:20:35 -0400
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2017-03-23 10:20:35 -0400
+
+
+Started DELETE "/session" for ::1 at 2017-03-23 10:20:37 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"D96YxVlMXkiCg/V6dAlA59rLg5gzm3bPRPYytAZ+7gNPEmiuw0VciR1iw2yaVTZZkGU3KPpMMEJnHq6GHQeRjA=="}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "ZqG3bwpZqjdtKkUdMwI4UQ"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."user_name" = 'zach' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'x9Xhm-8l1f7xztPUnwsJ5A' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "x9Xhm-8l1f7xztPUnwsJ5A"], ["id", 1]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 10ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/session/new" for ::1 at 2017-03-23 10:20:37 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (32.8ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.5ms)
+
+NoMethodError - undefined method `html_escape' for #<String:0x007fbe65ecb9d8>
+Did you mean?  html_safe:
+   () Users/appacademy/Desktop/99Cats/app/helpers/application_helper.rb:5:in `auth_token'
+   () Users/appacademy/Desktop/99Cats/app/views/sessions/new.html.erb:7:in `_app_views_sessions_new_html_erb__70467416919875316_70227865384560'
+  actionview (4.2.8) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.8) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.8) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.8) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.8) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.8) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.8) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.8) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.8) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.8) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.8) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.8) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.8) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.8) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.8) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.8) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.8) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.8) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.8) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.8) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.8) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.8) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.8) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.8) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.8) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.8) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.8) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.8) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.8) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.8) lib/action_controller/metal/instrumentation.rb:43:in `render'
+   () Users/appacademy/Desktop/99Cats/app/controllers/sessions_controller.rb:8:in `new'
+  actionpack (4.2.8) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.8) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.8) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.8) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.8) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.8) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.8) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.8) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.8) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.8) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.8) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.8) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.8) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.8) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.8) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.8) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.8) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.8) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.8) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.8) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.8) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.8) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.8) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.5) lib/rack/etag.rb:24:in `call'
+  rack (1.6.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.5) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.8) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.8) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.8) lib/rails/engine.rb:518:in `call'
+  railties (4.2.8) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+   () usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+   () usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+   () usr/local/var/rbenv/versions/2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/3e44c5078d23609f/variables" for ::1 at 2017-03-23 10:20:37 -0400
+
+
+Started GET "/session/new" for ::1 at 2017-03-23 10:21:10 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 64ms (Views: 54.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 10:21:10 -0400
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 10:21:10 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 10:21:10 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 10:21:10 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 10:21:10 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 10:21:10 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 10:21:10 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 10:21:10 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 10:21:10 -0400
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2017-03-23 10:21:10 -0400
+
+
+Started GET "/session/new" for ::1 at 2017-03-23 10:21:20 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 59ms (Views: 50.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 10:21:20 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 10:21:20 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 10:21:20 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 10:21:20 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 10:21:20 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 10:21:20 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 10:21:20 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 10:21:20 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 10:21:20 -0400
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2017-03-23 10:21:20 -0400
+
+
+Started POST "/session" for ::1 at 2017-03-23 10:21:25 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"QXiOeFr2mVzpEx/BptlEi60uCMhtaFyxnuKO8Gq+MsABtH4TwP+bnXbyKddIhTI154C8eKS/Gjy9ChLCccdNTw==", "user"=>{"user_name"=>"zach", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1[0m  [["user_name", "zach"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."user_name" = 'zach' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'W9WIzmu5Hyz8q7TJFZPu0g' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2[0m  [["session_token", "W9WIzmu5Hyz8q7TJFZPu0g"], ["id", 1]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 87ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/cats" for ::1 at 2017-03-23 10:21:25 -0400
+Processing by CatsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "W9WIzmu5Hyz8q7TJFZPu0g"]]
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Cat> at /Users/appacademy/Desktop/99Cats/app/models/cat.rb:23)
+  [1m[35mCat Load (0.4ms)[0m  SELECT "cats".* FROM "cats"
+  Rendered cats/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 67ms (Views: 58.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 10:21:25 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 10:21:25 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 10:21:25 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 10:21:25 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 10:21:25 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 10:21:25 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 10:21:25 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 10:21:25 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 10:21:25 -0400
+
+
+Started GET "/users/1" for ::1 at 2017-03-23 10:21:28 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "W9WIzmu5Hyz8q7TJFZPu0g"]]
+  [1m[35mCat Load (0.6ms)[0m  SELECT "cats".* FROM "cats" WHERE "cats"."user_id" = $1  [["user_id", 1]]
+  [1m[36mCatRentalRequest Load (0.4ms)[0m  [1mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 65ms (Views: 61.1ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/session" for ::1 at 2017-03-23 10:21:29 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/PxYW+v/nK0L+3lSU4zjSmExtGInmQaFVtcRDtoX/Z28MKgwcfaebJQaT0S90JX0K58A0u5OQAh1P408wW6CEg=="}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "W9WIzmu5Hyz8q7TJFZPu0g"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."user_name" = 'zach' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = 'NYzJ0MWOfWCd9QVJ9NWWYQ' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "NYzJ0MWOfWCd9QVJ9NWWYQ"], ["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 7ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/session/new" for ::1 at 2017-03-23 10:21:29 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 53ms (Views: 49.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 10:21:30 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 10:21:30 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 10:21:30 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 10:21:30 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 10:21:30 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 10:21:30 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 10:21:30 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 10:21:30 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 10:21:30 -0400
