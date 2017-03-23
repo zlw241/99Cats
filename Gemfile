@@ -19,4 +19,5 @@ group :development do
   gem 'pry-rails'
   gem 'annotate'
   gem 'seed_dump'
+  gem 'letter_opener'
 end

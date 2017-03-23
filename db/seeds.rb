@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 users = User.create!([
-  { user_name: 'zach', password: 'password' },
-  { user_name: 'john', password: 'password' },
+  { user_name: 'zach', password: 'password', email: "zach.l.ward6@gmail.com"},
+  { user_name: 'john', password: 'password', email: "john@example.com" },
   { user_name: 'rob', password: 'password' },
   { user_name: 'allie', password: 'password' },
   { user_name: 'bre', password: 'password' },
@@ -22,7 +22,7 @@ users = User.create!([
 
 
 cats = Cat.create!([
-  { name: 'Hans', birth_date: '1994-10-01', color: 'black', user_id: 1, description: "I'm an ugly cat", sex: 'M', image: 'kitty1.jpg'},
+  { name: 'Hans', birth_date: '1994-10-01', color: 'black', user_id: 1, description: "I'm an ugly cat", sex: 'M'},
   { name: 'Frans', birth_date: '1994-09-02', color: 'white', user_id: 2, description: "I'm a pretty cat", sex: 'M'},
   { name: 'Bronse', birth_date: '1994-08-03', color: 'orange', user_id: 3, description: "I'm a mean cat", sex: 'M'},
   { name: 'Mans', birth_date: '1994-07-04', color: 'brown', user_id: 1, description: "I'm a cute cat", sex: 'M'},
