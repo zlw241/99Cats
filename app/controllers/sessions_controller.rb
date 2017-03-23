@@ -17,7 +17,8 @@ class SessionsController < ApplicationController
       log_in(user)
       redirect_to cats_url
     else
-      render text: "Wrong username/password"
+      flash['login_error'] = "username or password incorrect"
+      redirect_to new_session_url
     end
   end
 
@@ -27,6 +28,5 @@ class SessionsController < ApplicationController
       redirect_to new_session_url
     end
   end
-
 
 end

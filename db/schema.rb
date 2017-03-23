@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170322211330) do
+ActiveRecord::Schema.define(version: 20170323014823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,14 +30,18 @@ ActiveRecord::Schema.define(version: 20170322211330) do
   add_index "cat_rental_requests", ["user_id"], name: "index_cat_rental_requests_on_user_id", using: :btree
 
   create_table "cats", force: :cascade do |t|
-    t.date     "birth_date",            null: false
-    t.string   "color",                 null: false
-    t.string   "name",                  null: false
-    t.string   "sex",         limit: 1, null: false
+    t.date     "birth_date",                   null: false
+    t.string   "color",                        null: false
+    t.string   "name",                         null: false
+    t.string   "sex",                limit: 1, null: false
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id",               null: false
+    t.integer  "user_id",                      null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "cats", ["user_id"], name: "index_cats_on_user_id", using: :btree

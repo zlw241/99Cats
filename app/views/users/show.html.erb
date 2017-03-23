@@ -1,11 +1,13 @@
 
 <h2>My Cats</h2>
-<ul>
+<ul style="list-style-type: none;">
 <% current_user.cats.each do |cat| %>
-  <li><a href="<%= cat_url(cat)%>"><%= cat.name %></a></li>
+  <li>
+    <a href="<%= cat_url(cat)%>"><%= cat.name %></a><br>
+    <img style="margin-bottom: 20px; width: 110px;" src="<%= cat.image.url %>">
+  </li>
 <% end %>
 </ul>
-
 
 <h2>Rental Requests</h2>
 <a href="<%= new_cat_rental_request_url %>">New Request</a>

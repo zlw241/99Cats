@@ -1,8 +1,11 @@
-<h1>Cats upon cats!</h1>
+<h2>Cats upon cats!</h2>
 
-<ul>
+<ul style="list-style-type: none;">
   <% @cats.each do |cat| %>
-    <li><%= link_to cat.name, cat_url(cat) %></li>
+    <li>
+      <a href="<%= cat_url(cat) %>"><%= cat.name %></a><br>
+      <img style="margin-bottom: 20px; width: 110px;" src="<%= cat.image.url %>">
+    </li>
   <% end %>
 </ul>
 

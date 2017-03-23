@@ -8,7 +8,6 @@ class CatRentalRequestsController < ApplicationController
   end
 
   def create
-    fail
     # @rental_request = current_user.cat_rental_requests.new(cat_rental_request_params)
     full_params = cat_rental_request_params
     full_params[:user_id] = current_user.id

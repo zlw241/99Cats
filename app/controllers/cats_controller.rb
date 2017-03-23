@@ -29,7 +29,6 @@ class CatsController < ApplicationController
   end
 
   def edit
-
     @cat = Cat.find(params[:id])
     render :edit
   end
@@ -48,7 +47,7 @@ class CatsController < ApplicationController
 
   def cat_params
     params.require(:cat)
-      .permit(:age, :birth_date, :color, :description, :name, :sex)
+      .permit(:age, :birth_date, :color, :description, :name, :sex, :image)
   end
 
   def edit_redirect
