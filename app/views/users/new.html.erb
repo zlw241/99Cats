@@ -7,12 +7,16 @@
   <label for="user_name">Username</label>
   <input id="user_name" type="text" name="user[user_name]">
 
-  <br>
+  <br><br>
 
   <label for="user_password">Password</label>
   <input id="user_password" type="password" name="user[password]">
 
-  <br>
+  <br><br>
 
   <input type="submit" value="Sign Up">
+
+  <% content_for :footer do %>
+    <p>Meow meow please sign up right meow</p>
+  <% end %>
 </form>

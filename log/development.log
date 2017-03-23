@@ -27915,3 +27915,588 @@ Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 10:21:30 -0400
 
 
 Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 10:21:30 -0400
+
+
+Started GET "/session/new" for ::1 at 2017-03-23 10:25:05 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 62ms (Views: 53.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 10:25:05 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 10:25:05 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 10:25:05 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 10:25:05 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 10:25:05 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 10:25:05 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 10:25:05 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 10:25:05 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 10:25:05 -0400
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2017-03-23 10:25:05 -0400
+
+
+Started GET "/session/new" for ::1 at 2017-03-23 10:25:15 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 55ms (Views: 52.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 10:25:15 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 10:25:15 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 10:25:15 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 10:25:15 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 10:25:15 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 10:25:15 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 10:25:15 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 10:25:15 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 10:25:15 -0400
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2017-03-23 10:25:15 -0400
+
+
+Started GET "/session/new" for ::1 at 2017-03-23 10:28:44 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 67ms (Views: 58.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 10:28:44 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 10:28:44 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 10:28:44 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 10:28:44 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 10:28:44 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 10:28:44 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 10:28:44 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 10:28:44 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 10:28:44 -0400
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2017-03-23 10:28:44 -0400
+
+
+Started GET "/users/new" for ::1 at 2017-03-23 10:29:25 -0400
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 52ms (Views: 50.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for ::1 at 2017-03-23 10:29:37 -0400
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 53ms (Views: 50.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 10:29:38 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 10:29:38 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 10:29:38 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 10:29:38 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 10:29:38 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 10:29:38 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 10:29:38 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 10:29:38 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 10:29:38 -0400
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2017-03-23 10:29:38 -0400
+
+
+Started GET "/users/new" for ::1 at 2017-03-23 10:29:49 -0400
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 53ms (Views: 51.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 10:29:49 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 10:29:49 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 10:29:49 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 10:29:49 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 10:29:49 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 10:29:49 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 10:29:49 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 10:29:49 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 10:29:49 -0400
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2017-03-23 10:29:49 -0400
+
+
+Started GET "/users/new" for ::1 at 2017-03-23 10:29:59 -0400
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 48ms (Views: 45.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 10:29:59 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 10:29:59 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 10:29:59 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 10:29:59 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 10:29:59 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 10:29:59 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 10:29:59 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 10:29:59 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 10:29:59 -0400
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2017-03-23 10:29:59 -0400
+
+
+Started GET "/session/new" for ::1 at 2017-03-23 10:30:03 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 69ms (Views: 60.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/new" for ::1 at 2017-03-23 10:30:05 -0400
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 58ms (Views: 55.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for ::1 at 2017-03-23 10:30:14 -0400
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 58ms (Views: 56.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 10:30:14 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 10:30:14 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 10:30:14 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 10:30:14 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 10:30:14 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 10:30:14 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 10:30:14 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 10:30:14 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 10:30:14 -0400
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2017-03-23 10:30:14 -0400
+
+
+Started GET "/users/new" for ::1 at 2017-03-23 10:30:26 -0400
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 56ms (Views: 54.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 10:30:26 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 10:30:26 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 10:30:26 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 10:30:26 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 10:30:26 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 10:30:26 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 10:30:26 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 10:30:26 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 10:30:26 -0400
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2017-03-23 10:30:26 -0400
+
+
+Started GET "/users/new" for ::1 at 2017-03-23 10:30:40 -0400
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 53ms (Views: 50.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 10:30:40 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 10:30:40 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 10:30:40 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 10:30:40 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 10:30:40 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 10:30:40 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 10:30:40 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 10:30:40 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 10:30:40 -0400
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2017-03-23 10:30:40 -0400
+
+
+Started GET "/session/new" for ::1 at 2017-03-23 10:30:43 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 63ms (Views: 59.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/session/new" for ::1 at 2017-03-23 10:31:48 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 62ms (Views: 60.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 10:31:49 -0400
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 10:31:49 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 10:31:49 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 10:31:49 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 10:31:49 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 10:31:49 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 10:31:49 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 10:31:49 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 10:31:49 -0400
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2017-03-23 10:31:49 -0400
+
+
+Started GET "/session/new" for ::1 at 2017-03-23 10:32:17 -0400
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+Completed 200 OK in 52ms (Views: 49.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 10:32:17 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 10:32:17 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 10:32:17 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 10:32:17 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 10:32:17 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 10:32:17 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 10:32:17 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 10:32:17 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 10:32:17 -0400
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2017-03-23 10:32:17 -0400
+
+
+Started GET "/users/new" for ::1 at 2017-03-23 10:32:19 -0400
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 60ms (Views: 56.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/session/new" for ::1 at 2017-03-23 10:32:21 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+Completed 200 OK in 62ms (Views: 58.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/session" for ::1 at 2017-03-23 10:32:35 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"AkVfT4R1slcGqkRk7s/hoAv3/D9CuMt9zzy+boyIHARCia8kHnywlplLcnIAk5ceQVlIj4tvjfDs1CJcl/Fjiw==", "user"=>{"user_name"=>"zach", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT 1  [["user_name", "zach"]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."user_name" = 'zach' AND "users"."id" != 1) LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."session_token" = '_kLZqGwqFPcr78iPJML5AA' AND "users"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "session_token" = $1 WHERE "users"."id" = $2  [["session_token", "_kLZqGwqFPcr78iPJML5AA"], ["id", 1]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 93ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/cats" for ::1 at 2017-03-23 10:32:36 -0400
+Processing by CatsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "_kLZqGwqFPcr78iPJML5AA"]]
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:Cat> at /Users/appacademy/Desktop/99Cats/app/models/cat.rb:23)
+  [1m[36mCat Load (0.5ms)[0m  [1mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 55ms (Views: 47.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 10:32:36 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 10:32:36 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 10:32:36 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 10:32:36 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 10:32:36 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 10:32:36 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 10:32:36 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 10:32:36 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 10:32:36 -0400
+
+
+Started GET "/cats" for ::1 at 2017-03-23 10:32:55 -0400
+Processing by CatsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "_kLZqGwqFPcr78iPJML5AA"]]
+  [1m[36mCat Load (0.5ms)[0m  [1mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 58ms (Views: 55.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/cat_rental_requests.css?body=1" for ::1 at 2017-03-23 10:32:55 -0400
+
+
+Started GET "/assets/cats.css?body=1" for ::1 at 2017-03-23 10:32:55 -0400
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2017-03-23 10:32:55 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2017-03-23 10:32:55 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2017-03-23 10:32:55 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for ::1 at 2017-03-23 10:32:55 -0400
+
+
+Started GET "/assets/cat_rental_requests.js?body=1" for ::1 at 2017-03-23 10:32:55 -0400
+
+
+Started GET "/assets/cats.js?body=1" for ::1 at 2017-03-23 10:32:55 -0400
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2017-03-23 10:32:55 -0400
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2017-03-23 10:32:55 -0400
